@@ -14,6 +14,8 @@ module tt_um_tomvdsch_cyclonerunner (
     wire gamepad_start;
     wire gamepad_up;
     wire gamepad_down;
+    wire gamepad_a;
+    wire gamepad_b;
 
     gamepad_pmod_single gamepad (
         .rst_n      (core_rst_n),
@@ -24,11 +26,13 @@ module tt_um_tomvdsch_cyclonerunner (
     
         .start      (gamepad_start),
         .up         (gamepad_up),
-        .down       (gamepad_down)
+        .down       (gamepad_down),
+	.a	    (gamepad_a),
+	.b	    (gamepad_b),
     );
 
-    wire jump_btn  = gamepad_up;
-    wire duck_btn  = gamepad_down;
+    wire jump_btn  = gamepad_up | gamepad_a;
+    wire duck_btn  = gamepad_down | gamepad_b;
     wire start_btn = gamepad_start;
 
     wire [9:0] pix_x;
@@ -126,8 +130,18 @@ module tt_um_tomvdsch_cyclonerunner (
     assign uo_out[5] = rgb[2];
     assign uo_out[6] = rgb[0];
     assign uo_out[7] = hsync;
-    assign uio_out = {audio_pwm, 7'b0000000};
-    assign uio_oe  = 8'b10000000;
+//    assign uio_out = {audio_pwm, 7'b0000000};
+//    assign uio_oe  = 8'b10000000;
+    assign uio_out[0] = 1'b0;
+    assign uio_out[1] = 1'b0;
+    assign uio_out[2] = 1'b0;
+    assign uio_out[3] = 1'b0;
+    assign uio_out[4] = 1'b0;
+    assign uio_out[5] = 1'b0;
+    assign uio_out[6] = 1'b0;
+    assign uio_out[7] = audio_pwm;
+
+    assign uio_oe = 8'b11111111;
 
     wire unused = &{
         uio_in,
@@ -148,7 +162,9 @@ module gamepad_pmod_single (
 
     output wire start,
     output wire up,
-    output wire down
+    output wire down,
+    output wire a,
+    output wire b
 );
 
     reg [1:0] data_sync;
@@ -159,7 +175,7 @@ module gamepad_pmod_single (
     reg latch_last;
 
     reg [11:0] shift_reg;
-    reg [2:0]  buttons;
+    reg [4:0]  buttons;
 
     wire clk_rise   = clk_sync[1] & ~clk_last;
     wire latch_rise = latch_sync[1] & ~latch_last;
@@ -182,7 +198,7 @@ module gamepad_pmod_single (
             clk_last   <= 1'b0;
             latch_last <= 1'b0;
             shift_reg  <= 12'hfff;
-            buttons    <= 3'b000;
+            buttons    <= 5'b00000;
         end else begin
             clk_last   <= clk_sync[1];
             latch_last <= latch_sync[1];
@@ -191,14 +207,15 @@ module gamepad_pmod_single (
                 shift_reg <= {shift_reg[10:0], data_sync[1]};
 
             if (latch_rise)
-                buttons <= empty ? 3'b000 : shift_reg[8:6];
+                buttons <= empty ? 5'b00000 :
+                            {shift_reg[8], shift_reg[7], shift_reg[6],
+                             shift_reg[3], shift_reg[11]};
         end
     end
 
-    assign {start, up, down} = buttons;
+    assign {start, up, down, a, b} = buttons;
 
 endmodule
-
 
 module vga_timing (
     input  wire       clk,
@@ -660,7 +677,6 @@ module renderer (
     end
 
 endmodule
-
 
 module audio_engine (
     input  wire clk,

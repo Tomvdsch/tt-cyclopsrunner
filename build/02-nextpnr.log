@@ -27,6 +27,7 @@ Info: constrained 'uo_out[7]' to bel 'X7/Y0/io0'
 
 Info: Packing constants..
 Info: Packing IOs..
+Info: uio[3] feeds SB_IO uio_pin[3], removing $nextpnr_iobuf uio[3].
 Info: uio[2] feeds SB_IO uio_pin[2], removing $nextpnr_iobuf uio[2].
 Info: uio[1] feeds SB_IO uio_pin[1], removing $nextpnr_iobuf uio[1].
 Info: uio[0] feeds SB_IO uio_pin[0], removing $nextpnr_iobuf uio[0].
@@ -34,30 +35,29 @@ Info: uio[7] feeds SB_IO uio_pin[7], removing $nextpnr_iobuf uio[7].
 Info: uio[6] feeds SB_IO uio_pin[6], removing $nextpnr_iobuf uio[6].
 Info: uio[5] feeds SB_IO uio_pin[5], removing $nextpnr_iobuf uio[5].
 Info: uio[4] feeds SB_IO uio_pin[4], removing $nextpnr_iobuf uio[4].
-Info: uio[3] feeds SB_IO uio_pin[3], removing $nextpnr_iobuf uio[3].
 Info: Packing LUT-FFs..
-Info:      366 LCs used as LUT4 only
-Info:      101 LCs used as LUT4 and DFF
+Info:      369 LCs used as LUT4 only
+Info:      103 LCs used as LUT4 and DFF
 Info: Packing non-LUT FFs..
 Info:       31 LCs used as DFF only
 Info: Packing carries..
-Info:      402 LCs used as CARRY only
+Info:      406 LCs used as CARRY only
 Info: Packing indirect carry+LUT pairs...
-Info:       49 LUTs merged into carry LCs
+Info:       51 LUTs merged into carry LCs
 Info: Packing RAMs..
 Info: Placing PLLs..
 Info: Packing special functions..
 Info: Packing PLLs..
 Info: Promoting globals..
-Info: promoting clk$SB_IO_IN (fanout 132)
-Info: promoting rst_n_SB_LUT4_I3_O [reset] (fanout 132)
-Info: promoting user_project.gamepad.start_SB_LUT4_I0_O_SB_LUT4_I2_O[3] [cen] (fanout 16)
+Info: promoting clk$SB_IO_IN (fanout 134)
+Info: promoting rst_n_SB_LUT4_I3_O [reset] (fanout 134)
+Info: promoting user_project.u_game_state.jump_btn_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_LUT4_I3_1_O[3] [cen] (fanout 16)
 Info: Constraining chains...
 Info:      138 LCs used to legalise carry chains.
-Info: Checksum: 0x376992dd
+Info: Checksum: 0x37ac08e3
 
 Info: Device utilisation:
-Info: 	         ICESTORM_LC:     991/   5280    18%
+Info: 	         ICESTORM_LC:     998/   5280    18%
 Info: 	        ICESTORM_RAM:       0/     30     0%
 Info: 	               SB_IO:      26/     39    66%
 Info: 	               SB_GB:       3/      8    37%
@@ -74,278 +74,315 @@ Info: 	         SB_RGBA_DRV:       0/      1     0%
 Info: 	      ICESTORM_SPRAM:       0/      4     0%
 
 Info: Placed 26 cells based on constraints.
-Info: Creating initial analytic placement for 374 cells, random placement wirelen = 13514.
-Info:     at initial placer iter 0, wirelen = 481
-Info:     at initial placer iter 1, wirelen = 399
-Info:     at initial placer iter 2, wirelen = 393
-Info:     at initial placer iter 3, wirelen = 398
-Info: Running main analytical placer, max placement attempts per cell = 130050.
-Info:     at iteration #1, type ALL: wirelen solved = 385, spread = 2607, legal = 2826; time = 0.02s
-Info:     at iteration #2, type ALL: wirelen solved = 532, spread = 2279, legal = 2662; time = 0.02s
-Info:     at iteration #3, type ALL: wirelen solved = 605, spread = 2558, legal = 2687; time = 0.02s
-Info:     at iteration #4, type ALL: wirelen solved = 698, spread = 2365, legal = 2525; time = 0.02s
-Info:     at iteration #5, type ALL: wirelen solved = 800, spread = 2241, legal = 2414; time = 0.02s
-Info:     at iteration #6, type ALL: wirelen solved = 894, spread = 1955, legal = 2325; time = 0.02s
-Info:     at iteration #7, type ALL: wirelen solved = 862, spread = 2032, legal = 2458; time = 0.02s
-Info:     at iteration #8, type ALL: wirelen solved = 952, spread = 2085, legal = 2611; time = 0.02s
-Info:     at iteration #9, type ALL: wirelen solved = 997, spread = 2252, legal = 2427; time = 0.02s
-Info:     at iteration #10, type ALL: wirelen solved = 1184, spread = 2203, legal = 2365; time = 0.02s
-Info:     at iteration #11, type ALL: wirelen solved = 1212, spread = 2090, legal = 2389; time = 0.02s
-Info: HeAP Placer Time: 0.41s
-Info:   of which solving equations: 0.22s
-Info:   of which spreading cells: 0.01s
-Info:   of which strict legalisation: 0.02s
+Info: Creating initial analytic placement for 381 cells, random placement wirelen = 13489.
+Info:     at initial placer iter 0, wirelen = 498
+Info:     at initial placer iter 1, wirelen = 372
+Info:     at initial placer iter 2, wirelen = 399
+Info:     at initial placer iter 3, wirelen = 435
+Info: Running main analytical placer, max placement attempts per cell = 131841.
+Info:     at iteration #1, type ALL: wirelen solved = 400, spread = 2611, legal = 2956; time = 0.03s
+Info:     at iteration #2, type ALL: wirelen solved = 538, spread = 2411, legal = 2809; time = 0.03s
+Info:     at iteration #3, type ALL: wirelen solved = 628, spread = 2458, legal = 2720; time = 0.03s
+Info:     at iteration #4, type ALL: wirelen solved = 783, spread = 2377, legal = 2586; time = 0.04s
+Info:     at iteration #5, type ALL: wirelen solved = 895, spread = 2316, legal = 2528; time = 0.03s
+Info:     at iteration #6, type ALL: wirelen solved = 937, spread = 2152, legal = 2475; time = 0.04s
+Info:     at iteration #7, type ALL: wirelen solved = 912, spread = 2186, legal = 2417; time = 0.03s
+Info:     at iteration #8, type ALL: wirelen solved = 1058, spread = 2001, legal = 2376; time = 0.03s
+Info:     at iteration #9, type ALL: wirelen solved = 1051, spread = 2258, legal = 2468; time = 0.03s
+Info:     at iteration #10, type ALL: wirelen solved = 1198, spread = 1986, legal = 2409; time = 0.04s
+Info:     at iteration #11, type ALL: wirelen solved = 1137, spread = 1975, legal = 2505; time = 0.04s
+Info:     at iteration #12, type ALL: wirelen solved = 1193, spread = 2166, legal = 2495; time = 0.03s
+Info:     at iteration #13, type ALL: wirelen solved = 1315, spread = 2022, legal = 2470; time = 0.03s
+Info: HeAP Placer Time: 0.59s
+Info:   of which solving equations: 0.42s
+Info:   of which spreading cells: 0.03s
+Info:   of which strict legalisation: 0.05s
 
 Info: Running simulated annealing placer for refinement.
-Info:   at iteration #1: temp = 0.000000, timing cost = 282, wirelen = 2325
-Info:   at iteration #5: temp = 0.000000, timing cost = 227, wirelen = 1964
-Info:   at iteration #10: temp = 0.000000, timing cost = 213, wirelen = 1878
-Info:   at iteration #15: temp = 0.000000, timing cost = 200, wirelen = 1821
-Info:   at iteration #17: temp = 0.000000, timing cost = 199, wirelen = 1806 
-Info: SA placement time 0.58s
+Info:   at iteration #1: temp = 0.000000, timing cost = 225, wirelen = 2376
+Info:   at iteration #5: temp = 0.000000, timing cost = 197, wirelen = 2009
+Info:   at iteration #10: temp = 0.000000, timing cost = 217, wirelen = 1917
+Info:   at iteration #15: temp = 0.000000, timing cost = 203, wirelen = 1861
+Info:   at iteration #18: temp = 0.000000, timing cost = 192, wirelen = 1831 
+Info: SA placement time 0.99s
 
-Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 32.31 MHz (PASS at 12.00 MHz)
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 31.96 MHz (PASS at 12.00 MHz)
 
-Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 12.91 ns
-Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 48.26 ns
+Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 12.65 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 50.87 ns
 
 Info: Slack histogram:
 Info:  legend: * represents 1 endpoint(s)
 Info:          + represents [1,1) endpoint(s)
-Info: [ 52380,  53729) |***********+
-Info: [ 53729,  55078) |****+
-Info: [ 55078,  56427) |*****+
-Info: [ 56427,  57776) |******+
-Info: [ 57776,  59125) |****+
-Info: [ 59125,  60474) |+
-Info: [ 60474,  61823) | 
-Info: [ 61823,  63172) |******+
-Info: [ 63172,  64521) |********+
-Info: [ 64521,  65870) |****+
-Info: [ 65870,  67219) |***+
-Info: [ 67219,  68568) |***+
-Info: [ 68568,  69917) |******************************+
-Info: [ 69917,  71266) |******+
-Info: [ 71266,  72615) |*********+
-Info: [ 72615,  73964) |**********************+
-Info: [ 73964,  75313) |**********+
-Info: [ 75313,  76662) |**********+
-Info: [ 76662,  78011) |*************************************+
-Info: [ 78011,  79360) |************************************************************ 
-Info: Checksum: 0x2ca036f3
+Info: [ 52040,  53406) |***********+
+Info: [ 53406,  54772) |********+
+Info: [ 54772,  56138) |**+
+Info: [ 56138,  57504) |******+
+Info: [ 57504,  58870) |***+
+Info: [ 58870,  60236) |+
+Info: [ 60236,  61602) | 
+Info: [ 61602,  62968) |***+
+Info: [ 62968,  64334) |************+
+Info: [ 64334,  65700) |**+
+Info: [ 65700,  67066) |***+
+Info: [ 67066,  68432) |********+
+Info: [ 68432,  69798) |********************+
+Info: [ 69798,  71164) |**************+
+Info: [ 71164,  72530) |********+
+Info: [ 72530,  73896) |**********************+
+Info: [ 73896,  75262) |********+
+Info: [ 75262,  76628) |*********+
+Info: [ 76628,  77994) |**********************************+
+Info: [ 77994,  79360) |************************************************************ 
+Info: Checksum: 0xe85c9916
 
 Info: Routing..
 Info: Setting up routing queue.
-Info: Routing 2896 arcs.
+Info: Routing 2903 arcs.
 Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
 Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
-Info:       1000 |      203        659 |  203   659 |      2118|       0.63       0.63|
-Info:       2000 |      257       1450 |   54   791 |      1186|       0.25       0.89|
-Info:       3000 |      325       2164 |   68   714 |       262|       0.18       1.07|
-Info:       3312 |      370       2381 |   45   217 |         0|       0.06       1.13|
+Info:       1000 |      170        691 |  170   691 |      2097|       0.20       0.20|
+Info:       2000 |      256       1437 |   86   746 |      1197|       0.16       0.36|
+Info:       3000 |      314       2177 |   58   740 |       258|       0.25       0.61|
+Info:       3304 |      357       2386 |   43   209 |         0|       0.08       0.69|
 Info: Routing complete.
-Info: Router1 time 1.13s
-Info: Checksum: 0x0f5c7892
+Info: Router1 time 0.69s
+Info: Checksum: 0xe323059b
 
 Info: Critical path report for clock 'clk$SB_IO_IN_$glb_clk' (posedge -> posedge):
 Info:       type curr  total name
-Info:   clk-to-q  1.39  1.39 Source user_project.gamepad.up_SB_LUT4_I1_O_SB_LUT4_O_1_I3_SB_CARRY_CO_I0_SB_LUT4_I2_O_SB_LUT4_O_2_LC.O
-Info:    routing  1.76  3.15 Net user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I2_SB_LUT4_O_I3[1] (12,11) -> (13,10)
-Info:                          Sink $nextpnr_ICESTORM_LC_108.I1
+Info:   clk-to-q  1.39  1.39 Source user_project.u_game_state.jump_btn_SB_LUT4_I2_O_SB_LUT4_O_1_I3_SB_CARRY_CO_I0_SB_LUT4_I2_LC.O
+Info:    routing  1.76  3.15 Net user_project.gamepad.start_SB_LUT4_I0_O_SB_LUT4_I2_O_SB_DFFES_E_Q (11,10) -> (10,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_I3_SB_LUT4_O_I3_SB_LUT4_O_LC.I0
 Info:                          Defined in:
-Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:482.49-482.74
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:499.49-499.74
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.68  3.83 Source $nextpnr_ICESTORM_LC_108.COUT
-Info:    routing  0.00  3.83 Net $nextpnr_ICESTORM_LC_108$O (13,10) -> (13,10)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_I0_SB_LUT4_O_LC.CIN
-Info:      logic  0.28  4.10 Source user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_I0_SB_LUT4_O_LC.COUT
-Info:    routing  0.66  4.77 Net $nextpnr_ICESTORM_LC_109$I3 (13,10) -> (13,10)
-Info:                          Sink $nextpnr_ICESTORM_LC_109.I3
-Info:      logic  0.87  5.64 Source $nextpnr_ICESTORM_LC_109.O
-Info:    routing  2.85  8.49 Net user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I0_SB_LUT4_O_I3 (13,10) -> (9,10)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI$CARRY.I3
+Info:      logic  1.28  4.43 Source user_project.gamepad.b_SB_LUT4_I0_I3_SB_LUT4_O_I3_SB_LUT4_O_LC.O
+Info:    routing  1.76  6.20 Net user_project.gamepad.b_SB_LUT4_I0_I3_SB_LUT4_O_I3[3] (10,11) -> (10,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_I3_SB_LUT4_O_LC.I3
 Info:                          Defined in:
-Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:355.32-355.48
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.87  7.07 Source user_project.gamepad.b_SB_LUT4_I0_I3_SB_LUT4_O_LC.O
+Info:    routing  1.76  8.83 Net user_project.gamepad.b_SB_LUT4_I0_I3[3] (10,11) -> (10,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_LC.I3
+Info:                          Defined in:
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.87  9.70 Source user_project.gamepad.b_SB_LUT4_I0_LC.O
+Info:    routing  1.76  11.47 Net user_project.gamepad.b_SB_LUT4_I0_O[1] (10,11) -> (9,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.I3
+Info:                          Defined in:
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.87  12.34 Source user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.O
+Info:    routing  1.76  14.10 Net user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_2_O[2] (9,11) -> (9,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.I1
+Info:                          Defined in:
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:577.16-577.33
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.68  14.78 Source user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.COUT
+Info:    routing  0.00  14.78 Net user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI (9,11) -> (9,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.CIN
+Info:                          Defined in:
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:403.10-403.37
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
-Info:      logic  0.87  9.36 Source user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI$CARRY.O
-Info:    routing  1.76  11.12 Net user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I0 (9,10) -> (9,10)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI$CARRY.I1
-Info:      logic  0.68  11.80 Source user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI$CARRY.COUT
-Info:    routing  0.66  12.46 Net $nextpnr_ICESTORM_LC_100$I3 (9,10) -> (9,10)
-Info:                          Sink $nextpnr_ICESTORM_LC_100.I3
-Info:      logic  0.87  13.33 Source $nextpnr_ICESTORM_LC_100.O
-Info:    routing  2.95  16.28 Net user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO (9,10) -> (11,9)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_LC.I1
+Info:      logic  0.28  15.05 Source user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.COUT
+Info:    routing  0.00  15.05 Net user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI (9,11) -> (9,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.CIN
+Info:                          Defined in:
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:403.10-403.37
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.28  15.33 Source user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.COUT
+Info:    routing  0.00  15.33 Net user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI (9,11) -> (9,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO$CARRY.CIN
+Info:                          Defined in:
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:403.10-403.37
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.28  15.61 Source user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO$CARRY.COUT
+Info:    routing  0.66  16.27 Net user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I2[3] (9,11) -> (9,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_LC.I3
+Info:                          Defined in:
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:403.10-403.37
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.87  17.15 Source user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_LC.O
+Info:    routing  1.76  18.91 Net user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_O[2] (9,11) -> (10,10)
+Info:                          Sink user_project.u_game_state.jump_btn_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_LUT4_O_LC.I2
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  1.23  17.52 Source user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_LC.O
-Info:    routing  1.76  19.28 Net user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_O[3] (11,9) -> (12,9)
-Info:                          Sink user_project.gamepad.up_SB_LUT4_I1_O_SB_LUT4_O_LC.I3
+Info:      logic  1.21  20.11 Source user_project.u_game_state.jump_btn_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_LUT4_O_LC.O
+Info:    routing  1.76  21.87 Net user_project.gamepad.start_SB_LUT4_I0_O[2] (10,10) -> (11,9)
+Info:                          Sink user_project.u_game_state.jump_btn_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_LUT4_I3_1_LC.I3
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.87  20.15 Source user_project.gamepad.up_SB_LUT4_I1_O_SB_LUT4_O_LC.O
-Info:    routing  1.76  21.91 Net user_project.gamepad.start_SB_LUT4_I0_O[2] (12,9) -> (12,9)
-Info:                          Sink user_project.gamepad.start_SB_LUT4_I0_O_SB_LUT4_I2_LC.I3
+Info:      logic  0.87  22.75 Source user_project.u_game_state.jump_btn_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_LUT4_I3_1_LC.O
+Info:    routing  3.06  25.80 Net user_project.u_game_state.jump_btn_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_LUT4_I3_1_O[3] (11,9) -> (10,4)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO_I1_SB_LUT4_O_I2_SB_DFFES_Q_E_SB_LUT4_O_LC.I3
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.87  22.79 Source user_project.gamepad.start_SB_LUT4_I0_O_SB_LUT4_I2_LC.O
-Info:    routing  3.06  25.84 Net user_project.gamepad.start_SB_LUT4_I0_O_SB_LUT4_I2_O[3] (12,9) -> (12,3)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_DFFES_Q_E_SB_LUT4_O_LC.I3
+Info:      logic  0.87  26.68 Source user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO_I1_SB_LUT4_O_I2_SB_DFFES_Q_E_SB_LUT4_O_LC.O
+Info:    routing  1.76  28.44 Net user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO_I1_SB_LUT4_O_I2_SB_DFFES_Q_E[2] (10,4) -> (9,5)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I1_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_DFFER_Q_E_SB_LUT4_O_LC.I3
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.87  26.72 Source user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_DFFES_Q_E_SB_LUT4_O_LC.O
-Info:    routing  1.76  28.48 Net user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I2_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_DFFES_Q_E[2] (12,3) -> (11,4)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I1_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_I2_SB_DFFER_Q_E_SB_LUT4_O_LC.I3
+Info:      logic  0.87  29.31 Source user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I1_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_DFFER_Q_E_SB_LUT4_O_LC.O
+Info:    routing  3.03  32.34 Net user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I1_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_DFFER_Q_E (9,5) -> (9,6)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I1_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_DFFER_Q_D_SB_LUT4_O_3_LC.CEN
 Info:                          Defined in:
-Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.87  29.35 Source user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I1_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_I2_SB_DFFER_Q_E_SB_LUT4_O_LC.O
-Info:    routing  3.10  32.45 Net user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I1_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_I2_SB_DFFER_Q_E (11,4) -> (10,5)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I1_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_I2_SB_DFFER_Q_D_SB_LUT4_O_LC.CEN
-Info:                          Defined in:
-Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:394.5-493.8
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:411.5-510.8
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/ff_map.v:14.63-14.116
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_sim.v:656.8-656.9
-Info:      setup  0.10  32.55 Source user_project.duck_btn_SB_LUT4_I0_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I1_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_I2_SB_DFFER_Q_D_SB_LUT4_O_LC.CEN
-Info: 10.47 ns logic, 22.08 ns routing
+Info:      setup  0.10  32.44 Source user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I2_O_SB_LUT4_O_I1_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_DFFER_Q_D_SB_LUT4_O_3_LC.CEN
+Info: 11.61 ns logic, 20.84 ns routing
 
 Info: Critical path report for cross-domain path '<async>' -> 'posedge clk$SB_IO_IN_$glb_clk':
 Info:       type curr  total name
 Info:     source  0.00  0.00 Source rst_n$sb_io.D_IN_0
-Info:    routing  3.15  3.15 Net rst_n$SB_IO_IN (13,31) -> (13,27)
-Info:                          Sink user_project.gamepad.latch_last_SB_LUT4_I3_LC.I1
+Info:    routing  3.15  3.15 Net rst_n$SB_IO_IN (13,31) -> (14,28)
+Info:                          Sink user_project.gamepad.clk_last_SB_LUT4_I3_LC.I1
 Info:                          Defined in:
-Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:205.23-205.28
-Info:      logic  1.23  4.38 Source user_project.gamepad.latch_last_SB_LUT4_I3_LC.O
-Info:    routing  5.04  9.42 Net user_project.gamepad.latch_last_SB_LUT4_I3_O (13,27) -> (14,10)
-Info:                          Sink user_project.gamepad.up_SB_DFFESR_Q_D_SB_LUT4_O_LC.CEN
-Info:      setup  0.10  9.52 Source user_project.gamepad.up_SB_DFFESR_Q_D_SB_LUT4_O_LC.CEN
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:222.23-222.28
+Info:      logic  1.23  4.38 Source user_project.gamepad.clk_last_SB_LUT4_I3_LC.O
+Info:    routing  5.04  9.42 Net user_project.gamepad.clk_last_SB_LUT4_I3_O (14,28) -> (14,11)
+Info:                          Sink user_project.gamepad.shift_reg_SB_DFFESS_Q_9_DFFLC.CEN
+Info:      setup  0.10  9.52 Source user_project.gamepad.shift_reg_SB_DFFESS_Q_9_DFFLC.CEN
 Info: 1.33 ns logic, 8.19 ns routing
 
 Info: Critical path report for cross-domain path 'posedge clk$SB_IO_IN_$glb_clk' -> '<async>':
 Info:       type curr  total name
-Info:   clk-to-q  1.39  1.39 Source user_project.gamepad.up_SB_LUT4_I1_O_SB_LUT4_O_1_I3_SB_CARRY_CO_I0_SB_LUT4_I2_LC.O
-Info:    routing  1.76  3.15 Net user_project.gamepad.start_SB_LUT4_I0_O_SB_LUT4_I2_1_I1_SB_LUT4_I2_O_SB_DFFES_E_Q (12,10) -> (11,11)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_I3_SB_LUT4_O_I3_SB_LUT4_O_LC.I0
+Info:   clk-to-q  1.39  1.39 Source user_project.u_game_state.jump_btn_SB_LUT4_I2_O_SB_LUT4_O_1_I3_SB_CARRY_CO_I0_SB_LUT4_I2_LC.O
+Info:    routing  1.76  3.15 Net user_project.gamepad.start_SB_LUT4_I0_O_SB_LUT4_I2_O_SB_DFFES_E_Q (11,10) -> (10,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_I3_SB_LUT4_O_I3_SB_LUT4_O_LC.I0
 Info:                          Defined in:
-Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:482.49-482.74
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:499.49-499.74
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  1.28  4.43 Source user_project.duck_btn_SB_LUT4_I0_I3_SB_LUT4_O_I3_SB_LUT4_O_LC.O
-Info:    routing  1.76  6.20 Net user_project.duck_btn_SB_LUT4_I0_I3_SB_LUT4_O_I3[3] (11,11) -> (12,10)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_I3_SB_LUT4_O_LC.I3
+Info:      logic  1.28  4.43 Source user_project.gamepad.b_SB_LUT4_I0_I3_SB_LUT4_O_I3_SB_LUT4_O_LC.O
+Info:    routing  1.76  6.20 Net user_project.gamepad.b_SB_LUT4_I0_I3_SB_LUT4_O_I3[3] (10,11) -> (10,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_I3_SB_LUT4_O_LC.I3
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.87  7.07 Source user_project.duck_btn_SB_LUT4_I0_I3_SB_LUT4_O_LC.O
-Info:    routing  1.76  8.83 Net user_project.duck_btn_SB_LUT4_I0_I3[3] (12,10) -> (12,10)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_LC.I3
+Info:      logic  0.87  7.07 Source user_project.gamepad.b_SB_LUT4_I0_I3_SB_LUT4_O_LC.O
+Info:    routing  1.76  8.83 Net user_project.gamepad.b_SB_LUT4_I0_I3[3] (10,11) -> (10,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_LC.I3
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.87  9.70 Source user_project.duck_btn_SB_LUT4_I0_LC.O
-Info:    routing  3.60  13.31 Net user_project.duck_btn_SB_LUT4_I0_2_O[2] (12,10) -> (7,9)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_LC.I2
+Info:      logic  0.87  9.70 Source user_project.gamepad.b_SB_LUT4_I0_LC.O
+Info:    routing  1.76  11.47 Net user_project.gamepad.b_SB_LUT4_I0_O[1] (10,11) -> (9,11)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.I3
 Info:                          Defined in:
-Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:559.16-559.33
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.87  12.34 Source user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_1_O_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_CARRY_I0_1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO$CARRY.O
+Info:    routing  3.49  15.84 Net user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_2_O[2] (9,11) -> (2,10)
+Info:                          Sink uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_LUT4_I3_LC.I2
+Info:                          Defined in:
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:577.16-577.33
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.61  13.91 Source user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_LC.COUT
-Info:    routing  0.00  13.91 Net user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI (7,9) -> (7,9)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_LC.CIN
+Info:      logic  0.61  16.44 Source uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_CI_CO_SB_LUT4_I3_LC.COUT
+Info:    routing  0.00  16.44 Net uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI (2,10) -> (2,10)
+Info:                          Sink uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_LC.CIN
 Info:                          Defined in:
-Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:548.16-548.33
-Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
-Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
-Info:      logic  0.28  14.19 Source user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_LC.COUT
-Info:    routing  0.00  14.19 Net user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_CO_CI (7,9) -> (7,9)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_LC.CIN
-Info:                          Defined in:
-Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:548.16-548.33
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:565.16-565.33
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
-Info:      logic  0.28  14.47 Source user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_LC.COUT
-Info:    routing  0.66  15.13 Net $nextpnr_ICESTORM_LC_43$I3 (7,9) -> (7,9)
-Info:                          Sink $nextpnr_ICESTORM_LC_43.I3
-Info:      logic  0.87  16.01 Source $nextpnr_ICESTORM_LC_43.O
-Info:    routing  1.76  17.77 Net user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3 (7,9) -> (8,9)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO$CARRY.I3
+Info:      logic  0.28  16.72 Source uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_LC.COUT
+Info:    routing  0.00  16.72 Net uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_CO_CI (2,10) -> (2,10)
+Info:                          Sink uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_LC.CIN
 Info:                          Defined in:
-Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:548.16-548.33
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:565.16-565.33
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
-Info:      logic  0.87  18.64 Source user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO$CARRY.O
-Info:    routing  1.76  20.40 Net user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO_I1 (8,9) -> (8,9)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO$CARRY.I2
-Info:      logic  0.61  21.01 Source user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_I3_SB_CARRY_CO$CARRY.COUT
-Info:    routing  0.00  21.01 Net $nextpnr_ICESTORM_LC_33$I3 (8,9) -> (8,9)
-Info:                          Sink $nextpnr_ICESTORM_LC_33.CIN
-Info:      logic  0.28  21.29 Source $nextpnr_ICESTORM_LC_33.COUT
-Info:    routing  1.22  22.51 Net $nextpnr_ICESTORM_LC_33$COUT (8,9) -> (8,10)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_LC.I3
-Info:      logic  0.87  23.38 Source user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_LC.O
-Info:    routing  2.95  26.33 Net user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O[3] (8,10) -> (5,10)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I1_LC.I3
+Info:      logic  0.28  17.00 Source uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3_SB_CARRY_CO_CI_SB_CARRY_CO_I1_SB_LUT4_O_LC.COUT
+Info:    routing  0.66  17.66 Net $nextpnr_ICESTORM_LC_16$I3 (2,10) -> (2,10)
+Info:                          Sink $nextpnr_ICESTORM_LC_16.I3
+Info:      logic  0.87  18.54 Source $nextpnr_ICESTORM_LC_16.O
+Info:    routing  2.95  21.49 Net uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3 (2,10) -> (2,8)
+Info:                          Sink uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3_SB_CARRY_CO$CARRY.I3
+Info:                          Defined in:
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:565.16-565.33
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.87  22.36 Source uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3_SB_CARRY_CO$CARRY.O
+Info:    routing  1.76  24.12 Net uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3_SB_CARRY_CO_I1 (2,8) -> (2,8)
+Info:                          Sink uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3_SB_CARRY_CO$CARRY.I2
+Info:      logic  0.61  24.73 Source uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3_SB_CARRY_CO$CARRY.COUT
+Info:    routing  0.66  25.39 Net $nextpnr_ICESTORM_LC_12$I3 (2,8) -> (2,8)
+Info:                          Sink $nextpnr_ICESTORM_LC_12.I3
+Info:      logic  0.87  26.27 Source $nextpnr_ICESTORM_LC_12.O
+Info:    routing  1.76  28.03 Net uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_I3 (2,8) -> (2,9)
+Info:                          Sink user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:565.10-565.33
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/abc9_model.v:4.9-4.11
+Info:      logic  0.87  28.90 Source user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_LUT4_O_LC.O
+Info:    routing  1.76  30.66 Net user_project.gamepad.b_SB_LUT4_I0_O_SB_LUT4_I3_2_O_SB_CARRY_I0_CO_SB_LUT4_I3_O_SB_LUT4_I2_O[3] (2,9) -> (2,9)
+Info:                          Sink uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_O_SB_LUT4_O_LC.I3
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.87  27.21 Source user_project.duck_btn_SB_LUT4_I0_2_O_SB_CARRY_I0_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I1_LC.O
-Info:    routing  2.95  30.16 Net user_project.duck_btn_SB_LUT4_I0_2_O_SB_LUT4_I1_O_SB_LUT4_I3_O_SB_LUT4_O_I1_SB_LUT4_I1_O[1] (5,10) -> (5,7)
-Info:                          Sink user_project.duck_btn_SB_LUT4_I0_2_O_SB_LUT4_I1_O_SB_LUT4_I3_O_SB_LUT4_O_I1_SB_LUT4_I1_O_SB_LUT4_I3_LC.I3
+Info:      logic  0.87  31.54 Source uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_O_SB_LUT4_O_LC.O
+Info:    routing  1.76  33.30 Net uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_O[1] (2,9) -> (2,9)
+Info:                          Sink uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_O_SB_LUT4_I3_LC.I3
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.87  31.03 Source user_project.duck_btn_SB_LUT4_I0_2_O_SB_LUT4_I1_O_SB_LUT4_I3_O_SB_LUT4_O_I1_SB_LUT4_I1_O_SB_LUT4_I3_LC.O
-Info:    routing  2.30  33.34 Net user_project.duck_btn_SB_LUT4_I0_2_O_SB_LUT4_I1_O_SB_LUT4_I3_O_SB_LUT4_O_I1_SB_LUT4_I1_O_SB_LUT4_I3_O[3] (5,7) -> (3,7)
-Info:                          Sink uo_out_SB_LUT4_O_1_I2_SB_LUT4_I2_I3_SB_LUT4_O_LC.I3
+Info:      logic  0.87  34.17 Source uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_O_SB_LUT4_I3_LC.O
+Info:    routing  1.76  35.93 Net uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_I1_SB_LUT4_I3_I1_SB_LUT4_I1_O_SB_LUT4_I3_O[3] (2,9) -> (1,10)
+Info:                          Sink uo_out_SB_LUT4_O_3_I1_SB_LUT4_I2_I3_SB_LUT4_O_LC.I3
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.87  34.21 Source uo_out_SB_LUT4_O_1_I2_SB_LUT4_I2_I3_SB_LUT4_O_LC.O
-Info:    routing  2.95  37.16 Net uo_out_SB_LUT4_O_1_I2_SB_LUT4_I2_I3[3] (3,7) -> (5,5)
-Info:                          Sink uo_out_SB_LUT4_O_1_I2_SB_LUT4_I2_LC.I3
+Info:      logic  0.87  36.81 Source uo_out_SB_LUT4_O_3_I1_SB_LUT4_I2_I3_SB_LUT4_O_LC.O
+Info:    routing  2.95  39.76 Net uo_out_SB_LUT4_O_3_I1_SB_LUT4_I2_I3[3] (1,10) -> (4,6)
+Info:                          Sink uo_out_SB_LUT4_O_3_I1_SB_LUT4_I2_LC.I3
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.87  38.04 Source uo_out_SB_LUT4_O_1_I2_SB_LUT4_I2_LC.O
-Info:    routing  1.76  39.80 Net uo_out_SB_LUT4_O_4_I3_SB_LUT4_O_I3[2] (5,5) -> (5,5)
-Info:                          Sink uo_out_SB_LUT4_O_4_I3_SB_LUT4_O_LC.I3
+Info:      logic  0.87  40.63 Source uo_out_SB_LUT4_O_3_I1_SB_LUT4_I2_LC.O
+Info:    routing  1.76  42.40 Net uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_I3[2] (4,6) -> (3,6)
+Info:                          Sink uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_LC.I3
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.87  40.67 Source uo_out_SB_LUT4_O_4_I3_SB_LUT4_O_LC.O
-Info:    routing  1.76  42.43 Net uo_out_SB_LUT4_O_4_I3[2] (5,5) -> (4,5)
-Info:                          Sink uo_out_SB_LUT4_O_4_LC.I3
+Info:      logic  0.87  43.27 Source uo_out_SB_LUT4_O_1_I3_SB_LUT4_O_LC.O
+Info:    routing  1.76  45.03 Net uo_out_SB_LUT4_O_1_I3[2] (3,6) -> (3,6)
+Info:                          Sink uo_out_SB_LUT4_O_1_LC.I3
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/oss-cad-suite-linux-x64-20260508/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22
-Info:      logic  0.87  43.31 Source uo_out_SB_LUT4_O_4_LC.O
-Info:    routing  6.84  50.15 Net uo_out[0]$SB_IO_OUT (4,5) -> (8,31)
+Info:      logic  0.87  45.90 Source uo_out_SB_LUT4_O_1_LC.O
+Info:    routing  6.84  52.74 Net uo_out[0]$SB_IO_OUT (3,6) -> (8,31)
 Info:                          Sink uo_out[0]$sb_io.D_OUT_0
 Info:                          Defined in:
 Info:                               /home/ttuser/Desktop/tt-cyclonerunner/src/project.v:3.23-3.29
-Info: 14.34 ns logic, 35.81 ns routing
+Info: 15.81 ns logic, 36.93 ns routing
 
-Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 30.72 MHz (PASS at 12.00 MHz)
+Info: Max frequency for clock 'clk$SB_IO_IN_$glb_clk': 30.82 MHz (PASS at 12.00 MHz)
 
 Info: Max delay <async>                       -> posedge clk$SB_IO_IN_$glb_clk: 9.52 ns
-Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 50.15 ns
+Info: Max delay posedge clk$SB_IO_IN_$glb_clk -> <async>                      : 52.74 ns
 
 Info: Slack histogram:
 Info:  legend: * represents 1 endpoint(s)
 Info:          + represents [1,1) endpoint(s)
-Info: [ 50785,  52214) |**+
-Info: [ 52214,  53643) |*****+
-Info: [ 53643,  55072) |**************+
-Info: [ 55072,  56501) |**************+
-Info: [ 56501,  57930) |*****+
-Info: [ 57930,  59359) |+
-Info: [ 59359,  60788) | 
-Info: [ 60788,  62217) |**********+
-Info: [ 62217,  63646) |********+
-Info: [ 63646,  65075) |*****+
-Info: [ 65075,  66504) |***+
-Info: [ 66504,  67933) |*******+
-Info: [ 67933,  69362) |************************+
-Info: [ 69362,  70791) |*******************+
-Info: [ 70791,  72220) |**+
-Info: [ 72220,  73649) |********************************************+
-Info: [ 73649,  75078) |*************+
-Info: [ 75078,  76507) |********************+
-Info: [ 76507,  77936) |******************************************************+
-Info: [ 77936,  79365) |************************************************************ 
+Info: [ 50889,  52313) |**+
+Info: [ 52313,  53737) |******+
+Info: [ 53737,  55161) |***********************+
+Info: [ 55161,  56585) |****+
+Info: [ 56585,  58009) |****+
+Info: [ 58009,  59433) |+
+Info: [ 59433,  60857) | 
+Info: [ 60857,  62281) |***** 
+Info: [ 62281,  63705) |**************+
+Info: [ 63705,  65129) |**+
+Info: [ 65129,  66553) |******+
+Info: [ 66553,  67977) |**********+
+Info: [ 67977,  69401) |************************* 
+Info: [ 69401,  70825) |*************+
+Info: [ 70825,  72249) |*******+
+Info: [ 72249,  73673) |*************************************+
+Info: [ 73673,  75097) |*************** 
+Info: [ 75097,  76521) |******************** 
+Info: [ 76521,  77945) |************************************************************ 
+Info: [ 77945,  79369) |****************************************************+
 
 Info: Program finished normally.
