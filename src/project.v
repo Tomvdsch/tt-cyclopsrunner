@@ -27,8 +27,8 @@ module tt_um_tomvdsch_cyclonerunner (
         .start      (gamepad_start),
         .up         (gamepad_up),
         .down       (gamepad_down),
-	.a	    (gamepad_a),
-	.b	    (gamepad_b),
+		.a	    	(gamepad_a),
+		.b	    	(gamepad_b)
     );
 
     wire jump_btn  = gamepad_up | gamepad_a;
